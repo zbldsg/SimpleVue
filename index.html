@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <title>简易VUE</title>
+</head>
+
+<body>
+<!--  <div id="app">-->
+<!--    <p>{{ message }}</p>-->
+<!--    <input v-model="message">-->
+<!--  </div>-->
+
+<div id="app">
+    <input v-model="message" type="text">
+    <h1>{{message}}</h1>
+    <h2 v-if="showTitle">我是神</h2>
+</div>
+</body>
+
+<script src="./vue.js"></script>
+<!--<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>-->
+
+
+<script>
+    const vm = new Vue({
+        el: '#app',
+        data: {
+            message: "Hello, Vue!",
+            showTitle: false,
+        }
+    })
+
+</script>
+
+
+<!--<script>-->
+<!--    const { createApp } = Vue-->
+
+<!--    createApp({-->
+<!--      data() {-->
+<!--        return {-->
+<!--          message: 'Hello Vue!'-->
+<!--        }-->
+<!--      }-->
+<!--    }).mount('#app')-->
+<!--  </script>-->
+
+</html>
