@@ -7,44 +7,28 @@
 </head>
 
 <body>
-<!--  <div id="app">-->
-<!--    <p>{{ message }}</p>-->
-<!--    <input v-model="message">-->
-<!--  </div>-->
-
 <div id="app">
     <input v-model="message" type="text">
     <h1>{{message}}</h1>
+    <a v-bind:href="link">Vue.js官网</a>
+    <button onclick="displayHidden()">显示/隐藏</button>
     <h2 v-if="showTitle">我是神</h2>
 </div>
 </body>
 
 <script src="./vue.js"></script>
-<!--<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>-->
-
-
 <script>
     const vm = new Vue({
         el: '#app',
         data: {
             message: "Hello, Vue!",
             showTitle: false,
+            link:'https://vuejs.org/',
         }
     })
 
+    function displayHidden() {
+        vm.data.showTitle = !vm.data.showTitle
+    }
 </script>
-
-
-<!--<script>-->
-<!--    const { createApp } = Vue-->
-
-<!--    createApp({-->
-<!--      data() {-->
-<!--        return {-->
-<!--          message: 'Hello Vue!'-->
-<!--        }-->
-<!--      }-->
-<!--    }).mount('#app')-->
-<!--  </script>-->
-
 </html>
